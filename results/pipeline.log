@@ -1,0 +1,328 @@
+12:30:57  INFO     Running in MOCK mode (synthetic structure metrics).
+12:30:57  INFO     Use --real for ESMFold API predictions (requires internet).
+
+12:30:59  INFO     
+════════════════════════════════════════════════════════════
+12:30:59  INFO     PHASE 1 — Target Selection & Interface Definition
+12:30:59  INFO     ════════════════════════════════════════════════════════════
+12:30:59  INFO     ──────────────────────────────────────────────────
+12:30:59  INFO     PHASE 1 — Target selection & interface definition
+12:30:59  INFO     ──────────────────────────────────────────────────
+12:30:59  INFO     Fetching PDB 4CNI from RCSB …
+12:31:00  INFO     Saved 4CNI → /Users/cyrusghane/Downloads/abiologics/data/receptor.pdb (206,792 bytes)
+12:31:00  INFO     
+============================================================
+Target: IL-6 (PDB: 4CNI)
+Binding site: Site II (gp130 binding interface)
+============================================================
+Interface residues: 18
+  Hydrophobic anchors : Y31, F73, I82, W157
+  Electrostatic       : D34, K77, E110, R113, K120, R160, K171
+  H-bond formers      : S38, S74, Q75, Q118, Q175
+
+Surface properties (Site II):
+  Net charge          : +3 to +4 at pH 7.4
+  Hydrophobic patch   : F73, I82, W157 form central hydrophobic core
+  Polar shell         : Q75, Q118, Q175 form H-bonding network around core
+============================================================
+12:31:00  INFO     Receptor sequence (220 aa): EVQLVESGGGLVQPGGSLRLSCAASGFNFN…
+12:31:00  INFO       Phase 1 completed in 1.0s
+12:31:00  INFO     
+════════════════════════════════════════════════════════════
+12:31:00  INFO     PHASE 2 — Candidate Generation (Affibody Library)
+12:31:00  INFO     ════════════════════════════════════════════════════════════
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     PHASE 2 — Candidate generation (Affibody scaffold)
+12:31:00  INFO       Scaffold : VDNKFNKEQQNAFYEILHLPNLNEEQRNAFIQSLKDDPSQSANLLAEAKKLNDA
+12:31:00  INFO       Length   : 54 aa
+12:31:00  INFO       Variable : 13 positions → [8, 9, 10, 12, 13, 15, 17, 23, 24, 25, 26, 27, 31]
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     Generating 700 biased + 300 random candidates …
+12:31:00  INFO     Generated 1000 candidates (library diversity: 0.201)
+12:31:00  INFO       Hydrophobicity range : -1.11 – -0.02
+12:31:00  INFO       Net charge range     : -7.0 – 3.0
+12:31:00  INFO     Saved 1000 candidates → /Users/cyrusghane/Downloads/abiologics/results/01_candidates_generated.csv
+12:31:00  INFO       Phase 2 completed in 0.2s → 1000 candidates
+12:31:00  INFO     
+════════════════════════════════════════════════════════════
+12:31:00  INFO     PHASE 3 — Developability Filtering
+12:31:00  INFO     ════════════════════════════════════════════════════════════
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     PHASE 3 — Developability filtering
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     Applying 7 developability filters to 1000 candidates …
+12:31:00  INFO     Filter results (1000 → 381 candidates):
+12:31:00  INFO       hydrophobicity      :  520/1000 pass (52.0%)
+12:31:00  INFO       charge              :  751/1000 pass (75.1%)
+12:31:00  INFO       cysteines           : 1000/1000 pass (100.0%)
+12:31:00  INFO       low_complexity      :  984/1000 pass (98.4%)
+12:31:00  INFO       aggregation         : 1000/1000 pass (100.0%)
+12:31:00  INFO       helix_propensity    : 1000/1000 pass (100.0%)
+12:31:00  INFO       molecular_weight    : 1000/1000 pass (100.0%)
+12:31:00  INFO       COMBINED            :  381/1000 pass (38.1%)
+12:31:00  INFO     
+Phase 3 complete: 381 candidates passed all filters.
+12:31:00  INFO     Saved filtered results → /Users/cyrusghane/Downloads/abiologics/results/02_candidates_filtered.csv
+12:31:00  INFO       Phase 3 completed in 0.8s → 381 candidates passed
+12:31:00  INFO     
+════════════════════════════════════════════════════════════
+12:31:00  INFO     PHASE 4 — Structure Prediction (mock)
+12:31:00  INFO     ════════════════════════════════════════════════════════════
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     PHASE 4 — Structure prediction (MOCK)
+12:31:00  INFO     ──────────────────────────────────────────────────
+12:31:00  INFO     Limited to 50 candidates for this run
+12:31:00  INFO     Predicting structures for 50 candidates …
+12:31:01  INFO     
+Phase 4 complete (mock mode):
+12:31:01  INFO       Mean pLDDT           : 77.3 ± 2.4
+12:31:01  INFO       Mean interface pLDDT : 72.6
+12:31:01  INFO       Mean contacts        : 15.7
+12:31:01  INFO       Mean BSA proxy (Å²)  : 390
+12:31:01  INFO     Saved structure metrics → /Users/cyrusghane/Downloads/abiologics/results/03_structure_metrics.csv
+12:31:01  INFO       Phase 4 completed in 0.7s → 50 structures
+12:31:01  INFO     
+════════════════════════════════════════════════════════════
+12:31:01  INFO     PHASE 5 — Composite Scoring & Ranking
+12:31:01  INFO     ════════════════════════════════════════════════════════════
+12:31:01  INFO     ──────────────────────────────────────────────────
+12:31:01  INFO     PHASE 5 — Composite scoring & ranking
+12:31:01  INFO     Score = 0.35 × iPLDDT + 0.3 × BSA + 0.15 × Hbond + -0.1 × Aggr + -0.1 × Protease
+12:31:01  INFO     ──────────────────────────────────────────────────
+12:31:01  INFO     
+Scoring complete:
+12:31:01  INFO       Top score   : 53.0
+12:31:01  INFO       Mean score  : 42.1 ± 4.5
+12:31:01  INFO       Median score: 42.0
+12:31:01  INFO     
+================================================================================
+Rank          ID   Final    Comp   iPLDDT   BSA Å²   nCont  Protease  Sequence
+--------------------------------------------------------------------------------
+   1   ABIO-0104    53.0    43.0     76.3      517      20        15  VDNKFNKELNHAVEEYLLLP…
+   2   ABIO-0117    51.5    41.5     81.1      432      16        14  VDNKFNKEIEKALNEYLLLP…
+   3   ABIO-0021    47.5    37.5     77.8      425      17        18  VDNKFNKEYQKAFNEWLMLP…
+   4   ABIO-0025    47.4    37.4     74.0      476      18        18  VDNKFNKEIDRAVEEWLILP…
+   5   ABIO-0042    47.1    37.1     76.2      434      17        17  VDNKFNKEHQRAFMEWLILP…
+   6   ABIO-0073    47.1    37.1     74.6      447      18        16  VDNKFNKELSRAHNESLVLP…
+   7   ABIO-0022    47.0    37.0     74.3      460      19        18  VDNKFNKEYDHAFKEFLMLP…
+   8   ABIO-0032    46.6    36.6     70.7      481      19        18  VDNKFNKEYQHAFHEWLLLP…
+   9   ABIO-0112    45.9    35.9     72.0      445      17        19  VDNKFNKEWNRAFNERLKLP…
+  10   ABIO-0094    45.9    35.9     77.6      410      16        17  VDNKFNKELDKAVEEWLVLP…
+  11   ABIO-0045    45.7    35.7     71.8      434      18        17  VDNKFNKEWWHAVIESLLLP…
+  12   ABIO-0038    45.5    35.5     74.3      407      15        15  VDNKFNKEAERAVVENLSLP…
+  13   ABIO-0043    45.0    35.0     74.5      441      17        18  VDNKFNKEYFRAFNEWLILP…
+  14   ABIO-0083    44.9    34.9     72.1      421      17        16  VDNKFNKESNIAYIEQLMLP…
+  15   ABIO-0041    44.9    34.9     74.3      388      15        16  VDNKFNKEYEQAVNEWLVLP…
+  16   ABIO-0061    44.6    34.6     73.5      418      16        17  VDNKFNKEWMRALEEYLWLP…
+  17   ABIO-0072    44.3    34.3     74.1      395      16        16  VDNKFNKEYNHAILEWLHLP…
+  18   ABIO-0034    44.2    34.2     75.6      389      16        19  VDNKFNKEWDKAFWETLELP…
+  19   ABIO-0105    44.2    34.2     71.5      472      18        19  VDNKFNKEYQRAFEEWLVLP…
+  20   ABIO-0101    43.7    33.7     72.4      412      16        17  VDNKFNKEWNRASNEVLMLP…
+================================================================================
+12:31:01  INFO     Saved ranked candidates → /Users/cyrusghane/Downloads/abiologics/results/04_candidates_ranked.csv
+12:31:01  INFO       Phase 5 completed in 0.0s → top score: 53.0
+12:31:01  INFO     
+════════════════════════════════════════════════════════════
+12:31:01  INFO     PHASE 6 — Iterative Optimisation (top 10)
+12:31:01  INFO     ════════════════════════════════════════════════════════════
+12:31:01  INFO     ──────────────────────────────────────────────────
+12:31:01  INFO     PHASE 6 — Iterative optimisation (MC/SA)
+12:31:01  INFO       Candidates  : top 10
+12:31:01  INFO       Rounds      : 6
+12:31:01  INFO       Mutations/round : 20
+12:31:01  INFO       Temperature : 1.0 → 0.05 (annealing)
+12:31:01  INFO     ──────────────────────────────────────────────────
+12:31:03  INFO       ABIO-0104: 53.0 → 53.0 (+0.0 over 6 rounds)
+12:31:04  INFO       ABIO-0117: 51.5 → 55.2 (+3.6 over 6 rounds)
+12:31:05  INFO       ABIO-0021: 47.5 → 52.6 (+5.0 over 6 rounds)
+12:31:07  INFO       ABIO-0025: 47.4 → 54.3 (+6.9 over 6 rounds)
+12:31:08  INFO       ABIO-0042: 47.1 → 54.0 (+6.9 over 6 rounds)
+12:31:09  INFO       ABIO-0073: 47.1 → 50.4 (+3.3 over 6 rounds)
+12:31:11  INFO       ABIO-0022: 47.0 → 54.0 (+7.1 over 6 rounds)
+12:31:12  INFO       ABIO-0032: 46.6 → 51.8 (+5.2 over 6 rounds)
+12:31:13  INFO       ABIO-0112: 45.9 → 53.5 (+7.6 over 6 rounds)
+12:31:15  INFO       ABIO-0094: 45.9 → 53.6 (+7.7 over 6 rounds)
+12:31:15  INFO     
+Optimisation complete:
+12:31:15  INFO       Mean initial score : 47.9
+12:31:15  INFO       Mean final score   : 53.2
+12:31:15  INFO       Mean improvement   : +5.3
+12:31:15  INFO       Total variants explored: 36
+12:31:15  INFO     Saved optimisation history → /Users/cyrusghane/Downloads/abiologics/results/05_optimization_history.csv
+12:31:15  INFO     Saved optimised variants → /Users/cyrusghane/Downloads/abiologics/results/06_optimized_variants.csv
+12:31:15  INFO       Phase 6 completed in 13.4s
+12:31:15  INFO     
+════════════════════════════════════════════════════════════
+12:31:15  INFO     PHASE 7 — Synteins-Style Analysis (top 5)
+12:31:15  INFO     ════════════════════════════════════════════════════════════
+12:31:15  INFO     ──────────────────────────────────────────────────
+12:31:15  INFO     PHASE 7 — Synteins-style analysis (top 5 candidates)
+12:31:15  INFO     ──────────────────────────────────────────────────
+12:31:15  INFO     
+======================================================================
+SYNTEINS ANALYSIS: ABIO-0104
+Score: 53.0 | Sequence: VDNKFNKELNHAVEEYLLLPNLNWYLKLAFINSLKDDPSQSANLLAEAKKLNDA
+======================================================================
+
+── Protease Resistance ─────────────────────────────────────
+Risk level     : HIGH
+Total sites    : 15 (Trypsin: 6, Chymotrypsin: 5)
+KR clusters    : 2
+Top modifications:
+  • K→Q or R→A at position 4 disrupts trypsin site
+  • K→Q or R→A at position 7 disrupts trypsin site
+  • K→Q or R→A at position 27 disrupts trypsin site
+
+── Immunogenicity ──────────────────────────────────────────
+Score : 0.120 | Risk: LOW
+MHC-II candidates : 0 windows
+
+── Structural Modifications ────────────────────────────────
+Helix staple pairs : 4 i,i+4 pairs
+PEGylation sites   : 3
+D-AA swap sites    : 5
+  Staple candidates: (K4, E8), (A46, K50), (K49, D53)
+  PEG sites: K4, K7, K35
+======================================================================
+12:31:15  INFO     
+======================================================================
+SYNTEINS ANALYSIS: ABIO-0117
+Score: 51.5 | Sequence: VDNKFNKEIEKALNEYLLLPNLNMQLKQAFIHSLKDDPSQSANLLAEAKKLNDA
+======================================================================
+
+── Protease Resistance ─────────────────────────────────────
+Risk level     : HIGH
+Total sites    : 14 (Trypsin: 7, Chymotrypsin: 3)
+KR clusters    : 2
+Top modifications:
+  • K→Q or R→A at position 4 disrupts trypsin site
+  • K→Q or R→A at position 7 disrupts trypsin site
+  • K→Q or R→A at position 11 disrupts trypsin site
+
+── Immunogenicity ──────────────────────────────────────────
+Score : 0.120 | Risk: LOW
+MHC-II candidates : 0 windows
+
+── Structural Modifications ────────────────────────────────
+Helix staple pairs : 5 i,i+4 pairs
+PEGylation sites   : 3
+D-AA swap sites    : 5
+  Staple candidates: (K4, E8), (K11, E15), (A46, K50)
+  PEG sites: K4, K7, K35
+======================================================================
+12:31:15  INFO     
+======================================================================
+SYNTEINS ANALYSIS: ABIO-0021
+Score: 47.5 | Sequence: VDNKFNKEYQKAFNEWLMLPNLNYQARHAFIWSLKDDPSQSANLLAEAKKLNDA
+======================================================================
+
+── Protease Resistance ─────────────────────────────────────
+Risk level     : HIGH
+Total sites    : 18 (Trypsin: 7, Chymotrypsin: 7)
+KR clusters    : 2
+Top modifications:
+  • K→Q or R→A at position 4 disrupts trypsin site
+  • K→Q or R→A at position 7 disrupts trypsin site
+  • K→Q or R→A at position 11 disrupts trypsin site
+
+── Immunogenicity ──────────────────────────────────────────
+Score : 0.080 | Risk: LOW
+MHC-II candidates : 0 windows
+
+── Structural Modifications ────────────────────────────────
+Helix staple pairs : 5 i,i+4 pairs
+PEGylation sites   : 3
+D-AA swap sites    : 5
+  Staple candidates: (K4, E8), (K11, E15), (A46, K50)
+  PEG sites: K4, K7, K35
+======================================================================
+12:31:15  INFO     
+======================================================================
+SYNTEINS ANALYSIS: ABIO-0025
+Score: 47.4 | Sequence: VDNKFNKEIDRAVEEWLILPNLNVSYRRAFIDSLKDDPSQSANLLAEAKKLNDA
+======================================================================
+
+── Protease Resistance ─────────────────────────────────────
+Risk level     : HIGH
+Total sites    : 18 (Trypsin: 8, Chymotrypsin: 4)
+KR clusters    : 3
+Top modifications:
+  • K→Q or R→A at position 4 disrupts trypsin site
+  • K→Q or R→A at position 7 disrupts trypsin site
+  • K→Q or R→A at position 11 disrupts trypsin site
+
+── Immunogenicity ──────────────────────────────────────────
+Score : 0.080 | Risk: LOW
+MHC-II candidates : 0 windows
+
+── Structural Modifications ────────────────────────────────
+Helix staple pairs : 5 i,i+4 pairs
+PEGylation sites   : 3
+D-AA swap sites    : 5
+  Staple candidates: (K4, E8), (R11, E15), (R28, D32)
+  PEG sites: K4, K7, K35
+======================================================================
+12:31:15  INFO     
+======================================================================
+SYNTEINS ANALYSIS: ABIO-0042
+Score: 47.1 | Sequence: VDNKFNKEHQRAFMEWLILPNLNQWFAHAFIWSLKDDPSQSANLLAEAKKLNDA
+======================================================================
+
+── Protease Resistance ─────────────────────────────────────
+Risk level     : HIGH
+Total sites    : 17 (Trypsin: 6, Chymotrypsin: 7)
+KR clusters    : 2
+Top modifications:
+  • K→Q or R→A at position 4 disrupts trypsin site
+  • K→Q or R→A at position 7 disrupts trypsin site
+  • K→Q or R→A at position 11 disrupts trypsin site
+
+── Immunogenicity ──────────────────────────────────────────
+Score : 0.080 | Risk: LOW
+MHC-II candidates : 0 windows
+
+── Structural Modifications ────────────────────────────────
+Helix staple pairs : 5 i,i+4 pairs
+PEGylation sites   : 3
+D-AA swap sites    : 5
+  Staple candidates: (K4, E8), (R11, E15), (A46, K50)
+  PEG sites: K4, K7, K35
+======================================================================
+12:31:15  INFO     
+Phase 7 complete: 5 candidates analysed
+12:31:15  INFO     Saved synteins analysis → /Users/cyrusghane/Downloads/abiologics/results/07_synteins_analysis.csv
+12:31:15  INFO       Phase 7 completed in 0.0s
+12:32:01  INFO     
+════════════════════════════════════════════════════════════
+12:32:01  INFO     FIGURES — Generating plots → /Users/cyrusghane/Downloads/abiologics/results/figures
+12:32:01  INFO     ════════════════════════════════════════════════════════════
+12:32:01  INFO     
+Generating figures → /Users/cyrusghane/Downloads/abiologics/results/figures
+12:32:01  INFO       Fig 1: Library distributions …
+12:32:04  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig1_library_distributions.png
+12:32:04  INFO       Fig 2: Filter funnel …
+12:32:04  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig2_filter_funnel.png
+12:32:04  INFO       Fig 3: Score distribution …
+12:32:05  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig3_score_distribution.png
+12:32:05  INFO       Fig 4: Top-20 scorecard …
+12:32:06  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig4_top20_scorecard.png
+12:32:06  INFO       Fig 7: Sequence logo …
+12:32:08  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig7_sequence_logo.png
+12:32:08  INFO       Fig 5: Optimisation trajectories …
+12:32:11  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig5_optimisation_trajectories.png
+12:32:11  INFO       Fig 6: Synteins analysis …
+12:32:12  INFO       Saved → /Users/cyrusghane/Downloads/abiologics/results/figures/fig6_synteins_analysis.png
+12:32:12  INFO     All figures saved to /Users/cyrusghane/Downloads/abiologics/results/figures
+12:32:12  INFO     
+╔════════════════════════════════════════════════════════════╗
+12:32:12  INFO     ║  PIPELINE COMPLETE                                         ║
+12:32:12  INFO     ╠════════════════════════════════════════════════════════════╣
+12:32:12  INFO     ║  Total runtime  : 74.9s
+12:32:12  INFO     ║  Candidates     : 1000 generated → 381 filtered → 50 scored
+12:32:12  INFO     ║  Top binder     : ABIO-0104 (score 53.0)
+12:32:12  INFO     ║  Top sequence   : VDNKFNKELNHAVEEYLLLPNLNWYLKLAFINSLKDDPSQSANLLAEAKKLNDA
+12:32:12  INFO     ║  Opt improvement: +5.3 mean score over 6 rounds
+12:32:12  INFO     ╠════════════════════════════════════════════════════════════╣
+12:32:12  INFO     ║  Results → /Users/cyrusghane/Downloads/abiologics/results
+12:32:12  INFO     ╚════════════════════════════════════════════════════════════╝
+

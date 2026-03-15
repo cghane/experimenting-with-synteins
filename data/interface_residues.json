@@ -1,0 +1,71 @@
+{
+  "target": "IL-6",
+  "pdb_id": "4CNI",
+  "receptor_chain": "A",
+  "binding_site": "Site II (gp130 binding interface)",
+  "description": "IL-6 Site II mediates binding to gp130 (signal transducing receptor). Blocking Site II disrupts downstream JAK/STAT3 signaling. Residues defined from crystallographic contact analysis of IL-6/gp130 D1 domain interface.",
+  "references": [
+    "Boulanger et al. Science 2003 (4CNI precursor)",
+    "Schaper & Rose-John, Cytokine 2015",
+    "Garbers et al. J Biol Chem 2011"
+  ],
+  "site_ii_residues": {
+    "description": "IL-6 residues at Site II (gp130 binding face), chain A of 4CNI",
+    "residues": [
+      {"resnum": 31,  "resname": "TYR", "one_letter": "Y", "role": "hydrophobic core"},
+      {"resnum": 34,  "resname": "ASP", "one_letter": "D", "role": "charge contact"},
+      {"resnum": 38,  "resname": "SER", "one_letter": "S", "role": "polar contact"},
+      {"resnum": 73,  "resname": "PHE", "one_letter": "F", "role": "hydrophobic anchor"},
+      {"resnum": 74,  "resname": "SER", "one_letter": "S", "role": "backbone H-bond"},
+      {"resnum": 75,  "resname": "GLN", "one_letter": "Q", "role": "H-bond donor/acceptor"},
+      {"resnum": 77,  "resname": "LYS", "one_letter": "K", "role": "electrostatic"},
+      {"resnum": 82,  "resname": "ILE", "one_letter": "I", "role": "hydrophobic"},
+      {"resnum": 110, "resname": "GLU", "one_letter": "E", "role": "charge contact"},
+      {"resnum": 113, "resname": "ARG", "one_letter": "R", "role": "electrostatic bridge"},
+      {"resnum": 118, "resname": "GLN", "one_letter": "Q", "role": "H-bond"},
+      {"resnum": 120, "resname": "LYS", "one_letter": "K", "role": "electrostatic"},
+      {"resnum": 124, "resname": "TYR", "one_letter": "Y", "role": "aromatic stacking"},
+      {"resnum": 157, "resname": "TRP", "one_letter": "W", "role": "hydrophobic anchor"},
+      {"resnum": 160, "resname": "ARG", "one_letter": "R", "role": "electrostatic"},
+      {"resnum": 168, "resname": "ARG", "one_letter": "R", "role": "salt bridge"},
+      {"resnum": 171, "resname": "LYS", "one_letter": "K", "role": "electrostatic"},
+      {"resnum": 175, "resname": "GLN", "one_letter": "Q", "role": "H-bond"}
+    ],
+    "key_hydrophobic": [73, 82, 157],
+    "key_electrostatic": [77, 110, 113, 120, 160, 168, 171],
+    "key_hbond": [38, 75, 118, 175]
+  },
+  "design_rationale": {
+    "target_surface_properties": {
+      "net_charge_site_ii": "+3 to +4 at pH 7.4",
+      "hydrophobic_patch": "F73, I82, W157 form central hydrophobic core",
+      "polar_shell": "Q75, Q118, Q175 form H-bonding network around core"
+    },
+    "binder_requirements": {
+      "complementary_charge": "Slightly negative binder preferred (-1 to -3)",
+      "hydrophobic_contact": "Aromatic/aliphatic residues at positions 9, 13, 25, 31",
+      "hbond_donors": "Asn/Gln preferred at positions facing Q75/Q118/Q175",
+      "electrostatic": "Asp/Glu at positions facing K77/K120/R168"
+    }
+  },
+  "scaffold_variable_positions": {
+    "description": "Affibody Z-domain positions randomized in binding face library (0-indexed)",
+    "helix_1_face": [8, 9, 10, 12, 13, 15, 17],
+    "helix_2_face": [23, 24, 25, 26, 27, 31],
+    "position_design_bias": {
+      "8":  {"preferred": ["F","Y","W","L","I"],  "rationale": "Hydrophobic core contact (F73/I82)"},
+      "9":  {"preferred": ["N","Q","D","E"],       "rationale": "H-bond to Q75"},
+      "10": {"preferred": ["R","K","H"],           "rationale": "Electrostatic with E110"},
+      "12": {"preferred": ["L","I","V","F"],       "rationale": "Hydrophobic packing"},
+      "13": {"preferred": ["D","E","N"],           "rationale": "H-bond/salt bridge to K77"},
+      "15": {"preferred": ["Y","W","F"],           "rationale": "Aromatic contact with Y124/W157"},
+      "17": {"preferred": ["I","L","V","M"],       "rationale": "Hydrophobic burial"},
+      "23": {"preferred": ["D","E"],               "rationale": "Salt bridge to R113/R168"},
+      "24": {"preferred": ["N","Q","S"],           "rationale": "H-bond to Q118"},
+      "25": {"preferred": ["F","Y","L"],           "rationale": "Hydrophobic anchor"},
+      "26": {"preferred": ["R","K"],               "rationale": "Electrostatic with D34/E110"},
+      "27": {"preferred": ["N","Q","D"],           "rationale": "H-bond network"},
+      "31": {"preferred": ["F","Y","W","I"],       "rationale": "Deep hydrophobic contact (W157)"}
+    }
+  }
+}

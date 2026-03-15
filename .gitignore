@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Claude
+.claude/
+
+# Env
+.env
+*.env
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large data (keep the .gitkeep placeholder)
+# results/ is intentionally included so figures and CSVs are visible on GitHub
