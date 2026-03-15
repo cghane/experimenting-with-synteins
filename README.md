@@ -4,7 +4,7 @@ A closed-loop computational pipeline for designing mini-proteins that block **IL
 
 ---
 
-## What Problem This Solves
+## Problem Statement
 
 Existing IL-6 blockers (e.g. tocilizumab) are 150 kDa antibodies costing ~$20k/year per patient, made in living cells. A 55 amino acid mini-protein could do the same job, being small enough to chemically synthesize, cheaper to manufacture, and engineerable in ways biology alone can't achieve (D-amino acids, cyclization, helix stapling).
 
@@ -84,12 +84,12 @@ These are rational design annotations — i.e., the same decisions I believe a m
 
 ---
 
-## Why the Affibody Scaffold
+## Why the Affibody Scaffold?
 
-- **55 amino acids** — within practical range of solid-phase chemical synthesis
-- **Clinically validated** — same scaffold class as izokibep (anti-IL-17A, Phase 2 trials)
-- **Stable 3-helix bundle** — well-characterized fold, predictable behavior
-- **Designable interface** — 13 positions on helices 1 & 2 face the binding site
+- **55 amino acids** - within practical range of solid-phase chemical synthesis
+- **Clinically validated** - same scaffold class as izokibep (anti-IL-17A, Phase 2 trials)
+- **Stable 3-helix bundle** - well-characterized fold, predictable behavior
+- **Designable interface** - 13 positions on helices 1 & 2 face the binding site
 
 ```
 VDNKFNKEQQNAFYEILHLPNLNEEQRNAFIQSLKDDPSQSANLLAEAKKLNDA
