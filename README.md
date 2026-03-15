@@ -1,14 +1,14 @@
 # AI-Guided Mini-Protein Binder Design Pipeline
 
-A closed-loop computational pipeline for designing mini-proteins that block **IL-6** — a key driver of autoimmune disease. Built to demonstrate the design-to-chemistry workflow at the core of next-generation Syntein-style therapeutics.
+A closed-loop computational pipeline for designing mini-proteins that block **IL-6** (a key driver of autoimmune disease). This project is my attempt to demonstrate the design-to-chemistry workflow at the core of next-generation Syntein-style therapeutics.
 
 ---
 
 ## What Problem This Solves
 
-Existing IL-6 blockers (e.g. tocilizumab) are 150 kDa antibodies costing ~$20k/year per patient, made in living cells. A 55 amino acid mini-protein could do the same job — small enough to chemically synthesize, cheaper to manufacture, and engineerable in ways biology alone can't achieve (D-amino acids, cyclization, helix stapling).
+Existing IL-6 blockers (e.g. tocilizumab) are 150 kDa antibodies costing ~$20k/year per patient, made in living cells. A 55 amino acid mini-protein could do the same job, being small enough to chemically synthesize, cheaper to manufacture, and engineerable in ways biology alone can't achieve (D-amino acids, cyclization, helix stapling).
 
-This pipeline automates the full design process: generate candidates → filter for drug-like properties → score by predicted binding quality → iteratively improve the best ones → annotate for chemical modification.
+My pipeline automates the full design process: generate candidates → filter for drug-like properties → score by predicted binding quality → iteratively improve the best ones → annotate for chemical modification.
 
 ---
 
@@ -80,7 +80,7 @@ For the top 5 candidates, the pipeline identifies concrete chemical modification
 | Helix stapling (i, i+4 pairs) | Pre-organize helix structure to improve binding affinity |
 | PEGylation sites | Extend half-life without disrupting binding interface |
 
-These are rational design annotations — the same decisions a medicinal chemist would make before sending a sequence to synthesis.
+These are rational design annotations — i.e., the same decisions I believe a medicinal chemist would make before sending a sequence to synthesis.
 
 ---
 
