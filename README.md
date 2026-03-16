@@ -1,6 +1,6 @@
-# AI-Guided Mini-Protein Binder Design Pipeline
+# AI-Guided Drug Design Pipeline
 
-A closed-loop computational pipeline for designing mini-proteins that block **IL-6** (a key driver of autoimmune disease). This project is my attempt to demonstrate the design-to-chemistry workflow at the core of next-generation Syntein-style therapeutics.
+Two closed-loop computational pipelines — **mini-protein** and **small molecule** — both targeting **IL-6**, a key driver of autoimmune disease. This project is my attempt to demonstrate the design-to-chemistry workflow at the core of next-generation therapeutics. Each pipeline implements the same design philosophy: generate candidates, filter for drug-like properties, score by predicted binding quality, and iteratively improve via Monte Carlo optimization.
 
 ---
 
@@ -33,9 +33,14 @@ Phase 7  Syntein layer      Annotate top-5 for D-amino acid swaps, cyclization, 
 ```bash
 pip install -r requirements.txt
 
+# Mini-protein pipeline
 python3 pipeline.py                     # full pipeline, mock mode (~75s)
 python3 pipeline.py --max-candidates 50 # quick demo
 python3 pipeline.py --real              # real ESMFold structure prediction
+
+# Small molecule pipeline
+python3 smallmol_pipeline.py                     # full run (~30s)
+python3 smallmol_pipeline.py --max-molecules 100 # quick demo
 ```
 
 ---
@@ -115,26 +120,70 @@ All figures auto-generated to `results/figures/`.
 
 ---
 
+## Small Molecule Pipeline
+
+A parallel pipeline targeting the same IL-6 Site II pocket with small molecules instead of proteins. Uses **RDKit** for all cheminformatics.
+
+```
+Phase 1  Pocket analysis     Extract pharmacophore profile from IL-6 Site II interface
+Phase 2  Generation          500 molecules from 5 scaffolds + fragment decoration (70% biased)
+Phase 3  Filtering           Lipinski Rule of 5, Veber rules, PAINS, aggregation risk
+Phase 4  Scoring             Composite: QED + SA + pharmacophore complementarity + ADMET
+Phase 5  Optimization        Monte Carlo SA with SMARTS-based molecular mutations
+Phase 6  Lead analysis       ADMET profiling, structural alerts, diversity, CYP liability
+```
+
+**Scoring function:**
+
+```
+Score = 0.25 × QED                      (quantitative drug-likeness)
+      + 0.20 × (1 − SA/10)             (synthetic accessibility, inverted)
+      + 0.30 × pharmacophore match      (complementarity to pocket hotspots)
+      − 0.10 × |logP − 2.5|            (penalty for non-ideal lipophilicity)
+      + 0.15 × TPSA in range            (oral bioavailability window)
+```
+
+**Key results (500 molecules):**
+
+| Metric | Value |
+|---|---|
+| Generated | 500 |
+| Passed filters | 453 |
+| Top lead score | 76.1 / 100 |
+| Mean MC improvement | +2.0 pts across top-10 |
+| All leads oral bioavail. | likely |
+| Lead diversity (Tanimoto) | 0.77 mean distance |
+
+**Optimization uses SMARTS-based mutations:** bioisosteric replacements (CH3 → NH2, OH → F), ring heteroatom swaps (aromatic CH → N), and functional group additions — the same medicinal chemistry transforms used in real lead optimization.
+
+---
+
 ## Repository Structure
 
 ```
-├── pipeline.py              Main runner
-├── config.py                All parameters (weights, thresholds, API settings)
+├── pipeline.py              Mini-protein pipeline runner
+├── config.py                Mini-protein parameters
+├── smallmol_pipeline.py     Small molecule pipeline runner
+├── smallmol_config.py       Small molecule parameters
 ├── requirements.txt
 ├── data/
-│   ├── receptor.pdb         IL-6 structure
+│   ├── receptor.pdb         IL-6 structure (shared by both pipelines)
 │   └── interface_residues.json
 ├── src/
-│   ├── phase1_target.py
-│   ├── phase2_generate.py
-│   ├── phase3_filter.py
-│   ├── phase4_predict.py
-│   ├── phase5_score.py
-│   ├── phase6_optimize.py
-│   ├── phase7_synteins.py
-│   ├── visualize.py
-│   └── utils.py
-├── results/                 CSVs + figures (auto-generated)
+│   ├── phase1–7_*.py        Mini-protein phase modules
+│   ├── visualize.py         Mini-protein figures (7)
+│   ├── utils.py             Amino acid property tables
+│   └── smallmol/
+│       ├── phase1_pocket.py     Pocket pharmacophore analysis
+│       ├── phase2_generate.py   Fragment-based molecule generation
+│       ├── phase3_filter.py     Lipinski + PAINS + ADMET filters
+│       ├── phase4_score.py      Composite scoring
+│       ├── phase5_optimize.py   MC optimization with SMARTS mutations
+│       ├── phase6_analyze.py    Lead ADMET profiling
+│       ├── visualize.py         Small molecule figures (5)
+│       └── utils.py             RDKit helpers
+├── results/                 Mini-protein output
+├── results/smallmol/        Small molecule output
 └── report/
     └── technical_report.md  Full 8-page writeup
 ```
@@ -148,3 +197,6 @@ All figures auto-generated to `results/figures/`.
 - Boulanger et al. *Science* 2003 — IL-6/gp130 complex structure
 - Kyte & Doolittle *J Mol Biol* 1982 — Hydrophobicity scale
 - Trovato et al. *PLoS Comput Biol* 2006 — PASTA aggregation scale
+- RDKit: Open-Source Cheminformatics — rdkit.org
+- Lipinski et al. *Adv Drug Deliv Rev* 2001 — Rule of Five
+- Bickerton et al. *Nature Chem* 2012 — QED (Quantitative Estimate of Drug-likeness)

@@ -1,0 +1,31 @@
+{
+  "n_hydrophobic_hotspots": 5,
+  "n_charged_hotspots": 8,
+  "n_hbond_hotspots": 5,
+  "total_residues": 18,
+  "hydrophobic_residues": [
+    31,
+    73,
+    82,
+    157,
+    124
+  ],
+  "charged_residues": [
+    34,
+    77,
+    110,
+    113,
+    120,
+    160,
+    168,
+    171
+  ],
+  "hbond_residues": [
+    38,
+    74,
+    75,
+    118,
+    175
+  ],
+  "dominant_character": "electrostatic/polar"
+}

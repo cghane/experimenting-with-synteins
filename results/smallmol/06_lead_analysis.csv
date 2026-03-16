@@ -1,0 +1,6 @@
+smiles,mw,logp,hbd,hba,tpsa,rotatable_bonds,ring_count,aromatic_rings,heavy_atoms,qed,sa_score,oral_bioavailability,bbb_permeability,cyp_risk,solubility_estimate,structural_alerts,n_pharmacophore_hbd,n_pharmacophore_hba,n_pharmacophore_hydrophobic,n_pharmacophore_charged,lead_id,mean_tanimoto_distance
+COc1cc(C(=O)O)nc(-c2c3c(cc(C)c2OC)N=NNN=C3)c1,341.3,2.71,2,8,117.8,4,3,2,25,0.883,3.68,likely,unlikely,moderate,moderate,none,2,8,3,2,SMOL-0301,0.772
+CCNc1c(F)cc(C)c(C)c1-c1nc(S(N)(=O)=O)cc(N)c1F,356.4,2.31,3,5,111.1,4,2,2,24,0.778,3.23,likely,unlikely,moderate,moderate,none,3,5,2,4,SMOL-0109,0.772
+CCNc1nc(-c2c(F)cc(C)nc2S(N)(=O)=O)cc(Cl)c1F,362.8,2.46,2,5,98.0,4,2,2,23,0.87,3.4,likely,unlikely,moderate,moderate,none,2,5,2,3,SMOL-0384,0.772
+COc1cc(S(N)(=O)=O)c(-c2cc(Cl)cc(N)n2)cc1Cl,348.2,2.29,2,5,108.3,3,2,2,21,0.885,3.39,likely,unlikely,moderate,moderate,none,2,5,2,3,SMOL-0093,0.772
+CCc1cc(OC)c(C)c(-c2c(C)cc(N)cc2S(N)(=O)=O)n1,335.4,2.17,2,5,108.3,4,2,2,23,0.832,3.01,likely,unlikely,moderate,moderate,aniline,2,5,2,3,SMOL-0451,0.772

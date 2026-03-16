@@ -1,0 +1,100 @@
+16:40:01  smallmol_pipeline               INFO     Small Molecule Pipeline starting
+16:40:01  smallmol_pipeline               INFO     Results directory: /Users/cyrusghane/Downloads/abiologics/results/smallmol
+16:40:09  matplotlib.font_manager         WARNING  Matplotlib is building the font cache; this may take a moment.
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/LastResort.otf: tuple indices must be integers or slices, not str
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/ZitherIndia.otf: In FT2Font: Can not load face (SFNT font table missing; error code 0x8e)
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/PrivateFrameworks/FontServices.framework/Resources/Reserved/PingFangUI.ttc: In FT2Font: Can not load face (locations (loca) table missing; error code 0x90)
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/ZitherTamil.otf: In FT2Font: Can not load face (SFNT font table missing; error code 0x8e)
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/ZitherMalayalam.otf: In FT2Font: Can not load face (SFNT font table missing; error code 0x8e)
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/Supplemental/NISC18030.ttf: In FT2Font: Could not set the fontsize (invalid pixel size; error code 0x17)
+16:40:17  matplotlib.font_manager         INFO     Failed to extract font properties from /System/Library/Fonts/Apple Color Emoji.ttc: In FT2Font: Could not set the fontsize (invalid pixel size; error code 0x17)
+16:40:17  matplotlib.font_manager         INFO     generated new fontManager
+16:40:20  src.smallmol.phase1_pocket      INFO     ============================================================
+16:40:20  src.smallmol.phase1_pocket      INFO     PHASE 1 — Pocket Analysis
+16:40:20  src.smallmol.phase1_pocket      INFO     ============================================================
+16:40:20  src.smallmol.phase1_pocket      INFO     IL-6 Site II pocket profile:
+16:40:20  src.smallmol.phase1_pocket      INFO       Hydrophobic hotspots: 5
+16:40:20  src.smallmol.phase1_pocket      INFO       Charged hotspots:     8
+16:40:20  src.smallmol.phase1_pocket      INFO       H-bond hotspots:      5
+16:40:20  src.smallmol.phase1_pocket      INFO       Dominant character:    electrostatic/polar
+16:40:20  src.smallmol.phase1_pocket      INFO       Total interface res:   18
+16:40:20  src.smallmol.phase1_pocket      INFO     Saved pocket profile -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/pocket_profile.json
+16:40:20  src.smallmol.phase2_generate    INFO     ============================================================
+16:40:20  src.smallmol.phase2_generate    INFO     PHASE 2 — Molecule Generation
+16:40:20  src.smallmol.phase2_generate    INFO     ============================================================
+16:40:20  src.smallmol.phase2_generate    INFO     Generated 500 molecules (350 biased, 150 random)
+16:40:20  src.smallmol.phase2_generate    INFO     Unique scaffolds: ['benzimidazole', 'indole', 'other', 'phenylpyridine', 'pyrazole']
+16:40:20  src.smallmol.phase2_generate    INFO     MW range: 98 – 302
+16:40:20  src.smallmol.phase2_generate    INFO     Saved -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/01_molecules_generated.csv
+16:40:20  src.smallmol.phase3_filter      INFO     ============================================================
+16:40:20  src.smallmol.phase3_filter      INFO     PHASE 3 — Molecular Filtering
+16:40:20  src.smallmol.phase3_filter      INFO     ============================================================
+16:40:21  src.smallmol.phase3_filter      INFO     Input: 500 molecules
+16:40:21  src.smallmol.phase3_filter      INFO       lipinski         498 / 500 pass (100%)
+16:40:21  src.smallmol.phase3_filter      INFO       veber            499 / 500 pass (100%)
+16:40:21  src.smallmol.phase3_filter      INFO       complexity       457 / 500 pass (91%)
+16:40:21  src.smallmol.phase3_filter      INFO       aggregation      500 / 500 pass (100%)
+16:40:21  src.smallmol.phase3_filter      INFO       pains            499 / 500 pass (100%)
+16:40:21  src.smallmol.phase3_filter      INFO     Overall: 453 / 500 pass all filters (91%)
+16:40:21  src.smallmol.phase3_filter      INFO     Saved (all with pass flags) -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/02_molecules_filtered.csv
+16:40:22  src.smallmol.phase4_score       INFO     ============================================================
+16:40:22  src.smallmol.phase4_score       INFO     PHASE 4 — Composite Scoring
+16:40:22  src.smallmol.phase4_score       INFO     ============================================================
+16:40:23  src.smallmol.phase4_score       INFO     Scored 453 molecules
+16:40:23  src.smallmol.phase4_score       INFO     Score range: 26.5 – 73.0
+16:40:23  src.smallmol.phase4_score       INFO     Mean score: 50.7
+16:40:23  src.smallmol.phase4_score       INFO     Top 5 candidates:
+16:40:23  src.smallmol.phase4_score       INFO       SMOL-0384  score=73.0  QED=0.89  SA=3.0  binding=0.45  CCNc1ccnc(-c2ccccc2S(N)(=O)=O)c1
+16:40:23  src.smallmol.phase4_score       INFO       SMOL-0109  score=73.0  QED=0.89  SA=3.0  binding=0.45  CCNc1ccccc1-c1cccc(S(N)(=O)=O)n1
+16:40:23  src.smallmol.phase4_score       INFO       SMOL-0211  score=72.3  QED=0.94  SA=3.0  binding=0.33  CC(C)c1ccccc1-c1cc(S(N)(=O)=O)ccn1
+16:40:23  src.smallmol.phase4_score       INFO       SMOL-0074  score=72.3  QED=0.94  SA=3.0  binding=0.33  CC(C)c1ccccc1-c1cccc(S(N)(=O)=O)n1
+16:40:23  src.smallmol.phase4_score       INFO       SMOL-0358  score=72.2  QED=0.94  SA=3.0  binding=0.33  CC(C)Cc1ccccc1-c1cccc(S(N)(=O)=O)n1
+16:40:23  src.smallmol.phase4_score       INFO     Saved -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/03_molecules_scored.csv
+16:40:23  src.smallmol.phase5_optimize    INFO     ============================================================
+16:40:23  src.smallmol.phase5_optimize    INFO     PHASE 5 — Monte Carlo Optimization
+16:40:23  src.smallmol.phase5_optimize    INFO     ============================================================
+16:40:23  src.smallmol.phase5_optimize    INFO     Optimizing top 10 candidates
+16:40:23  src.smallmol.phase5_optimize    INFO     Rounds: 8, Mutations/round: 15, T: 1.00 -> 0.05
+16:40:23  src.smallmol.phase5_optimize    INFO       SMOL-0384: 73.0 -> 74.2 (+1.2)
+16:40:24  src.smallmol.phase5_optimize    INFO       SMOL-0109: 73.0 -> 74.5 (+1.5)
+16:40:24  src.smallmol.phase5_optimize    INFO       SMOL-0211: 72.3 -> 73.0 (+0.7)
+16:40:24  src.smallmol.phase5_optimize    INFO       SMOL-0074: 72.3 -> 72.8 (+0.5)
+16:40:25  src.smallmol.phase5_optimize    INFO       SMOL-0358: 72.2 -> 73.1 (+0.9)
+16:40:25  src.smallmol.phase5_optimize    INFO       SMOL-0301: 70.9 -> 76.1 (+5.1)
+16:40:25  src.smallmol.phase5_optimize    INFO       SMOL-0451: 70.6 -> 73.3 (+2.7)
+16:40:26  src.smallmol.phase5_optimize    INFO       SMOL-0401: 70.6 -> 72.7 (+2.1)
+16:40:26  src.smallmol.phase5_optimize    INFO       SMOL-0093: 70.2 -> 74.2 (+4.0)
+16:40:26  src.smallmol.phase5_optimize    INFO       SMOL-0134: 70.0 -> 71.3 (+1.3)
+16:40:26  src.smallmol.phase5_optimize    INFO     Mean improvement: +2.0 score units
+16:40:26  src.smallmol.phase5_optimize    INFO     Saved history -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/04_optimization_history.csv
+16:40:26  src.smallmol.phase5_optimize    INFO     Saved variants -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/05_optimized_variants.csv
+16:40:26  src.smallmol.phase6_analyze     INFO     ============================================================
+16:40:26  src.smallmol.phase6_analyze     INFO     PHASE 6 — Lead Analysis
+16:40:26  src.smallmol.phase6_analyze     INFO     ============================================================
+16:40:26  src.smallmol.phase6_analyze     INFO     Analyzing 5 lead compounds
+16:40:26  src.smallmol.phase6_analyze     INFO     Mean pairwise Tanimoto distance: 0.772
+16:40:26  src.smallmol.phase6_analyze     INFO       SMOL-0301: MW=341 LogP=2.7 QED=0.88 SA=3.7 oral=likely cyp=moderate alerts=none
+16:40:26  src.smallmol.phase6_analyze     INFO       SMOL-0109: MW=356 LogP=2.3 QED=0.78 SA=3.2 oral=likely cyp=moderate alerts=none
+16:40:26  src.smallmol.phase6_analyze     INFO       SMOL-0384: MW=363 LogP=2.5 QED=0.87 SA=3.4 oral=likely cyp=moderate alerts=none
+16:40:26  src.smallmol.phase6_analyze     INFO       SMOL-0093: MW=348 LogP=2.3 QED=0.89 SA=3.4 oral=likely cyp=moderate alerts=none
+16:40:26  src.smallmol.phase6_analyze     INFO       SMOL-0451: MW=335 LogP=2.2 QED=0.83 SA=3.0 oral=likely cyp=moderate alerts=aniline
+16:40:26  src.smallmol.phase6_analyze     INFO     Saved -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/06_lead_analysis.csv
+16:40:26  src.smallmol.visualize          INFO     Generating figures...
+16:40:27  src.smallmol.visualize          INFO       Saved figure -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/figures/fig1_property_distributions.png
+16:40:27  src.smallmol.visualize          INFO       Saved figure -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/figures/fig2_filter_funnel.png
+16:40:28  src.smallmol.visualize          INFO       Saved figure -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/figures/fig3_score_distribution.png
+16:40:28  src.smallmol.visualize          INFO       Saved figure -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/figures/fig4_optimization_trajectories.png
+16:40:28  src.smallmol.visualize          INFO       Saved figure -> /Users/cyrusghane/Downloads/abiologics/results/smallmol/figures/fig5_lead_dashboard.png
+16:40:28  src.smallmol.visualize          INFO     All 5 figures generated.
+16:40:28  smallmol_pipeline               INFO     
+16:40:28  smallmol_pipeline               INFO     =================================================================
+16:40:28  smallmol_pipeline               INFO       PIPELINE COMPLETE
+16:40:28  smallmol_pipeline               INFO     =================================================================
+16:40:28  smallmol_pipeline               INFO       Molecules generated:  500
+16:40:28  smallmol_pipeline               INFO       Passed filters:       453
+16:40:28  smallmol_pipeline               INFO       Scored:               453
+16:40:28  smallmol_pipeline               INFO       Leads analyzed:       5
+16:40:28  smallmol_pipeline               INFO       Elapsed time:         27.4 seconds
+16:40:28  smallmol_pipeline               INFO       Results:              /Users/cyrusghane/Downloads/abiologics/results/smallmol
+16:40:28  smallmol_pipeline               INFO       Log:                  /Users/cyrusghane/Downloads/abiologics/results/smallmol/smallmol_pipeline.log
+16:40:28  smallmol_pipeline               INFO     =================================================================
