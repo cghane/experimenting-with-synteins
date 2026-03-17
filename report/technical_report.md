@@ -10,9 +10,9 @@
 
 ## 1. Introduction
 
-Therapeutic biologics are the fastest-growing class of medicines, but their design remains largely empirical. Classical antibodies (150 kDa) are expensive to manufacture, cannot cross epithelial barriers, and are too large for many binding sites. Mini-protein binders — engineered proteins of 50–100 amino acids — offer an alternative: they are small enough for chemical synthesis, stable enough for oral delivery concepts, and can achieve picomolar binding affinities through structured design.
+Therapeutic biologics are the fastest-growing class of medicines, but their design remains largely empirical. Classical antibodies (150 kDa) are expensive to manufacture, cannot cross epithelial barriers, and are too large for many binding sites. Mini-protein binders, which are engineered proteins of 50–100 amino acids, offer an alternative: they are small enough for chemical synthesis, stable enough for oral delivery concepts, and can achieve picomolar binding affinities through structured design.
 
-This project implements a **closed-loop computational design pipeline** to generate, filter, score, and iteratively optimise mini-protein binders against Interleukin-6 (IL-6), a major therapeutic target in rheumatoid arthritis, Castleman disease, and cytokine release syndrome. Rather than generating sequences randomly and hoping for the best, this pipeline encodes physical chemistry, structural biology, and developability constraints into every step — mirroring how serious protein engineering groups operate.
+This project implements a **closed-loop computational design pipeline** to generate, filter, score, and iteratively optimise mini-protein binders against Interleukin-6 (IL-6), a major therapeutic target in rheumatoid arthritis, Castleman disease, and cytokine release syndrome. 
 
 The pipeline comprises seven phases, each with quantitative outputs, producing a ranked list of binder candidates annotated with protease resistance, immunogenicity risk, and rational stabilisation strategies.
 
@@ -252,11 +252,11 @@ The iterative optimisation loop (Phase 6) is particularly important: it shows th
 
 **Sampling completeness**: With 13 variable positions and 17 allowed amino acids, the sequence space is 17^13 ≈ 10^16 — vastly undersampled at 1,000 candidates. Deep learning models (ProteinMPNN, ESM-IF) would enable better-informed traversal of this space.
 
-**Mock mode**: The pipeline's mock structure prediction generates synthetic metrics that are physically motivated but not actual predictions. In production, all candidates should be evaluated with real ESMFold or AF2-Multimer.
+**Mock mode**: The pipeline's mock structure prediction generates synthetic metrics that are physically motivated (but not actual predictions). In production, all candidates should be evaluated with real ESMFold or AF2-Multimer.
 
 ### 7.3 Future directions
 
-1. **RFdiffusion integration**: Generate de novo backbones tailored to IL-6 Site II topology, then apply ProteinMPNN for sequence design — this would replace the fixed Affibody scaffold constraint.
+1. **RFdiffusion integration**: Generate de novo backbones tailored to IL-6 Site II topology, then apply ProteinMPNN for sequence design. This would replace the fixed Affibody scaffold constraint.
 
 2. **Rosetta-based scoring**: Replace the contact-counting BSA proxy with Rosetta InterfaceAnalyzer for accurate ΔΔG binding estimates.
 
@@ -278,7 +278,7 @@ This pipeline demonstrates a complete computational biologics design workflow:
 - AI-driven iterative optimisation
 - Synteins-style safety and stabilisation analysis
 
-The approach produced a set of 5 lead candidates with predicted interface confidence scores in the 75–84 range (on a 0–100 scale), low aggregation risk, and multiple identified stabilisation strategies. While experimental validation remains essential, this pipeline represents the type of systematic, quantitative thinking required for modern AI-guided therapeutics development.
+The approach produced a set of 5 lead candidates with predicted interface confidence scores in the 75–84 range (on a 0–100 scale), low aggregation risk, and multiple identified stabilisation strategies. While experimental validation remains essential, this pipeline attempts to embody the systematic, quantitative thinking required for modern AI-guided therapeutics development.
 
 ---
 
