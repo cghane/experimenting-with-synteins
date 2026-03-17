@@ -1,4 +1,4 @@
-# AI-Guided Drug Design Pipeline
+# Experimenting with Synteins for Drug Design
 
 tldr: Two closed-loop computational pipelines (**mini-protein** and **small molecule**) both targeting **IL-6**, a key driver of autoimmune disease. 
 
