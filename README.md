@@ -150,7 +150,7 @@ Score = 0.25 × QED                      (quantitative drug-likeness)
 | All leads oral bioavail. | likely |
 | Lead diversity (Tanimoto) | 0.77 mean distance |
 
-Optimization uses SMARTS-based mutations: bioisosteric replacements (CH3 → NH2, OH → F), ring heteroatom swaps (aromatic CH → N), and functional group additions — the same medicinal chemistry transforms used in real lead optimization.
+Optimization uses SMARTS-based mutations: bioisosteric replacements (CH3 → NH2, OH → F), ring heteroatom swaps (aromatic CH → N), and functional group additions.
 
 ---
 
