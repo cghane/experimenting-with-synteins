@@ -86,9 +86,6 @@ For the top 5 candidates, the pipeline identifies concrete chemical modification
 | Head-to-tail cyclization | Lock binding conformation, resist exoprotease degradation |
 | Helix stapling (i, i+4 pairs) | Pre-organize helix structure to improve binding affinity |
 | PEGylation sites | Extend half-life without disrupting binding interface |
-
-These are rational design annotations — i.e., the same decisions I believe a medicinal chemist would make before sending a sequence to synthesis.
-
 ---
 
 ## Why the Affibody Scaffold?
