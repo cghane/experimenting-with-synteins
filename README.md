@@ -2,7 +2,7 @@
 
 tldr: Two closed-loop computational pipelines (**mini-protein** and **small molecule**) both targeting **IL-6**, a key driver of autoimmune disease. 
 
-This project is my optimistic attempt to demonstrate the design-to-chemistry workflow at the core of next-generation therapeutics. Each pipeline implements the same design philosophy: generate candidates, filter for drug-like properties, score by predicted binding quality, and iteratively improve via Monte Carlo optimization.
+This project is my optimistic attempt to demonstrate the design-to-chemistry workflow at the core of next-generation therapeutics.
 
 ---
 
