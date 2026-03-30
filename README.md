@@ -114,9 +114,6 @@ VDNKFNKEQQNAFYEILHLPNLNEEQRNAFIQSLKDDPSQSANLLAEAKKLNDA
 | Fig 5 | Optimization trajectories per candidate |
 | Fig 6 | Protease risk vs. immunogenicity (top-5) |
 | Fig 7 | Sequence logo — variable positions in top-20 binders |
-
-All figures auto-generated to `results/figures/`.
-
 ---
 
 ## Small Molecule Pipeline
@@ -153,7 +150,7 @@ Score = 0.25 × QED                      (quantitative drug-likeness)
 | All leads oral bioavail. | likely |
 | Lead diversity (Tanimoto) | 0.77 mean distance |
 
-**Optimization uses SMARTS-based mutations:** bioisosteric replacements (CH3 → NH2, OH → F), ring heteroatom swaps (aromatic CH → N), and functional group additions — the same medicinal chemistry transforms used in real lead optimization.
+Optimization uses SMARTS-based mutations: bioisosteric replacements (CH3 → NH2, OH → F), ring heteroatom swaps (aromatic CH → N), and functional group additions — the same medicinal chemistry transforms used in real lead optimization.
 
 ---
 
